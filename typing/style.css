@@ -1,0 +1,16 @@
+p {
+  color: black;
+  text-align: center;
+  font-size: 3em;
+}
+
+p .inputed-text {
+  color: blue;
+  font-size: 0.5em;
+}
+
+span {
+  -webkit-transition: all 300ms 0s ease;
+  transition: all 300ms 0s ease;
+}
+/*# sourceMappingURL=style.css.map */
