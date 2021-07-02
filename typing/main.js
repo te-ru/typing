@@ -1,7 +1,9 @@
 let text = document.getElementById('text');
-
+let score = document.getElementById('score');
+score.textContent = 0;
+let point = 0;
 const inputList =[
-    'hello world'
+    'aa'
 ];
 
 let checkText = [];
@@ -11,13 +13,11 @@ function createTask() {
         let span = document.createElement('span');
         span.textContent = value;
         text.appendChild(span);
+        console.log(point);
         return span;
     });
 }
 createTask();
-
-
-// text.textContent = inputList[0];
 
 document.addEventListener('keydown' , keyDown);
 function keyDown(input) {
@@ -26,8 +26,20 @@ function keyDown(input) {
         checkText.shift();
 
         if(!checkText.length){
+            scoreUp();
             createTask();
         }
     }
 }
 
+function scoreUp() {
+    if(point >= 9) {
+        clear();
+    }
+    score.textContent++;
+    point++;
+}
+
+function clear() {
+    alert('よくできました！');
+}
