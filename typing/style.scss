@@ -1,11 +1,17 @@
-p {
+#text {
     color: black;
     text-align: center;
-    font-size: 3em;
+    font-size: 4em;
 
     & .inputed-text {
-        color: blue;
+        color: rgb(47, 56, 185);
         font-size: 0.5em;
+    }
+}
+.score__area {
+    background-color: red;
+    & > #score {
+        font-size: 3em;
     }
 }
 

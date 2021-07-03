@@ -3,13 +3,22 @@ let score = document.getElementById('score');
 score.textContent = 0;
 let point = 0;
 const inputList =[
-    'aa'
+    'console.log' ,
+    'function' ,
+    'const' ,
+    'let' ,
+    'document' ,
+    'create' ,
+    'append' ,
+    'alert'
+
 ];
 
 let checkText = [];
 function createTask() {
+    let rnd = Math.floor(Math.random() * inputList.length);
     text.textContent = ''
-    checkText = inputList[0].split('').map(function(value) {
+    checkText = inputList[rnd].split('').map(function(value) {
         let span = document.createElement('span');
         span.textContent = value;
         text.appendChild(span);
