@@ -1,7 +1,11 @@
 let text = document.getElementById('text');
 let score = document.getElementById('score');
-score.textContent = 0;
+let miss = document.getElementById('miss');
 let point = 0;
+let missPoint = 0;
+score.textContent = 'score: ' + point;
+miss.textContent = 'miss: ' + missPoint;
+
 const inputList =[
     'console.log' ,
     'function' ,
@@ -15,7 +19,7 @@ const inputList =[
 ];
 
 let checkText = [];
-function createTask() {
+const createTask = () => {
     let rnd = Math.floor(Math.random() * inputList.length);
     text.textContent = ''
     checkText = inputList[rnd].split('').map(function(value) {
@@ -26,9 +30,11 @@ function createTask() {
         return span;
     });
 }
+
 createTask();
 
 document.addEventListener('keydown' , keyDown);
+
 function keyDown(input) {
     if(input.key ===　checkText[0].textContent) {
         checkText[0].className = 'inputed-text';
@@ -38,17 +44,31 @@ function keyDown(input) {
             scoreUp();
             createTask();
         }
+    } else {
+        missCount();
     }
 }
 
-function scoreUp() {
+
+const scoreUp = () => {
     if(point >= 9) {
         clear();
     }
-    score.textContent++;
     point++;
+    score.textContent = 'score: ' + point;
+
 }
 
-function clear() {
-    alert('よくできました！');
+const missCount = () => {
+    missPoint++;
+    miss.textContent = 'miss: ' + missPoint;
+}
+
+
+const clear = () => {
+    if(missPoint < 10) {
+        alert('よくできました！');
+}　else {
+    alert('タイピングミスが多いかも…');
+}
 }

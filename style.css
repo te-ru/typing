@@ -5,16 +5,26 @@
 }
 
 #text .inputed-text {
-  color: #2f38b9;
+  color: #989dd6;
   font-size: 0.5em;
 }
 
 .score__area {
-  background-color: red;
+  color: red;
 }
 
 .score__area > #score {
-  font-size: 3em;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.miss__area {
+  color: blue;
+}
+
+.miss__area > #miss {
+  font-size: 2.5em;
+  text-align: center;
 }
 
 span {

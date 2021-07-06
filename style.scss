@@ -4,17 +4,25 @@
     font-size: 4em;
 
     & .inputed-text {
-        color: rgb(47, 56, 185);
+        color: rgb(152, 157, 214);
         font-size: 0.5em;
     }
 }
 .score__area {
-    background-color: red;
+    color: red;
     & > #score {
-        font-size: 3em;
+        font-size: 2.5em;
+        text-align: center;
     }
 }
 
+.miss__area {
+    color: blue;
+    & > #miss {
+        font-size: 2.5em;
+        text-align: center;
+    }
+}
 span {
     transition: all 300ms 0s ease;
 }
