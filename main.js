@@ -14,7 +14,14 @@ const inputList =[
     'document' ,
     'create' ,
     'append' ,
-    'alert'
+    'alert' , 
+    // '&&' ,
+    // '||' ,
+    'return' , 
+    // '=>' ,
+    'while' ,
+    'for',
+    'continue'
 
 ];
 
@@ -68,7 +75,16 @@ const missCount = () => {
 const clear = () => {
     if(missPoint < 10) {
         alert('よくできました！');
+        reset();
 }　else {
     alert('タイピングミスが多いかも…');
+    reset();      
 }
+}
+
+const reset = () => {
+    point = -1;
+    missPoint = 0;
+    score.textContent = 'score: ' + point;
+    miss.textContent = 'miss: ' + missPoint;
 }
