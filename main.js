@@ -1,11 +1,13 @@
-let text = document.getElementById('text');
+let task = document.getElementById('task');
 let score = document.getElementById('score');
 let miss = document.getElementById('miss');
+
 let point = 0;
 let missPoint = 0;
 score.textContent = 'score: ' + point;
 miss.textContent = 'miss: ' + missPoint;
 
+// 出題される課題
 const inputList =[
     'console.log' ,
     'function' ,
@@ -25,14 +27,14 @@ const inputList =[
 
 ];
 
-let checkText = [];
+let checkTask = [];
 const createTask = () => {
     let rnd = Math.floor(Math.random() * inputList.length);
-    text.textContent = ''
-    checkText = inputList[rnd].split('').map(function(value) {
+    task.textContent = ''
+    checkTask = inputList[rnd].split('').map(function(value) {
         let span = document.createElement('span');
         span.textContent = value;
-        text.appendChild(span);
+        task.appendChild(span);
         console.log(point);
         return span;
     });
@@ -41,13 +43,12 @@ const createTask = () => {
 createTask();
 
 document.addEventListener('keydown' , keyDown);
-
 function keyDown(input) {
-    if(input.key ===　checkText[0].textContent) {
-        checkText[0].className = 'inputed-text';
-        checkText.shift();
+    if(input.key ===　checkTask[0].textContent) {
+        checkTask[0].className = 'inputed-task';
+        checkTask.shift();
 
-        if(!checkText.length){
+        if(!checkTask.length){
             scoreUp();
             createTask();
         }
@@ -56,14 +57,12 @@ function keyDown(input) {
     }
 }
 
-
 const scoreUp = () => {
     if(point >= 9) {
         clear();
     }
     point++;
     score.textContent = 'score: ' + point;
-
 }
 
 const missCount = () => {
